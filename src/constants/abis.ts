@@ -43,6 +43,7 @@ export const multicall3Abi = [
   },
 ] as const
 
+
 export const universalResolverAbi = [
   {
     name: 'resolve',
@@ -59,6 +60,7 @@ export const universalResolverAbi = [
   },
 ] as const
 
+
 export const textResolverAbi = [
   {
     name: 'text',
@@ -72,9 +74,35 @@ export const textResolverAbi = [
   },
 ] as const
 
+
 export const singleAddressResolverAbi = [
   {
     name: 'addr',
+    type: 'function',
+    stateMutability: 'view',
+    inputs: [{ name: 'name', type: 'bytes32' }],
+    outputs: [{ name: '', type: 'address' }],
+  },
+] as const
+
+
+export const universalResolverAbiLNR = [
+  {
+    name: 'getResolveAddress',
+    type: 'function',
+    stateMutability: 'view',
+    inputs: [
+      { name: 'name', type: 'bytes32' },
+    ],
+    outputs: [
+      { name: 'address', type: 'address' },
+    ],
+  },
+] as const
+
+export const singleAddressResolverAbiLNR = [
+  {
+    name: 'getResolveAddress',
     type: 'function',
     stateMutability: 'view',
     inputs: [{ name: 'name', type: 'bytes32' }],

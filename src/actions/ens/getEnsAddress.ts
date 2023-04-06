@@ -71,7 +71,7 @@ export async function getEnsAddress<TChain extends Chain | undefined,>(
   })
 
   if (res[0] === '0x') return null
-
+ 
   const address = decodeFunctionResult({
     abi: singleAddressResolverAbi,
     functionName: 'addr',

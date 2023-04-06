@@ -59,7 +59,7 @@ export type { Formatter, Formatters } from './formatter'
 
 export type { Log } from './log'
 
-export type { ByteArray, Hex, Hash, LogTopic, Signature } from './misc'
+export type { ByteArray, Hex, Hash, LogTopic, Signature, Bytes32 } from './misc'
 
 export type {
   MulticallContracts,

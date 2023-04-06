@@ -168,7 +168,10 @@
     "vitest": "~0.29.2"
   },
   "license": "MIT",
-  "repository": "wagmi-dev/viem",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wagmi-dev/viem.git"
+  },
   "authors": [
     "awkweb.eth",
     "jxom.eth"
@@ -200,5 +203,13 @@
         "@algolia/client-search"
       ]
     }
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/wagmi-dev/viem/issues"
+  },
+  "homepage": "https://github.com/wagmi-dev/viem#readme",
+  "directories": {
+    "example": "examples"
+  },
+  "author": ""
 }

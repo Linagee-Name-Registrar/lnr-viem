@@ -1,8 +1,8 @@
 import { BaseError } from '../../errors'
-import type { ByteArray, Hex } from '../../types'
+import type { ByteArray, Hex, Bytes32 } from '../../types'
 import { isHex } from '../data/isHex'
 import type { NumberToHexOpts } from './toHex'
-import { numberToHex } from './toHex'
+import { numberToHex, toHex } from './toHex'
 
 const encoder = new TextEncoder()
 
@@ -59,4 +59,23 @@ export function numberToBytes(value: bigint | number, opts?: NumberToHexOpts) {
  */
 export function stringToBytes(value: string): ByteArray {
   return encoder.encode(value)
+}
+
+
+/** @description Encodes a UTF-8 string, hex value, bigint, number or boolean to a byte32. */
+export function toBytes32(
+  value: string | bigint | number | boolean | Hex,
+): Bytes32 {
+
+  var result = toHex(value)
+
+  while( result.length < 66 ){
+    result +="0"
+  }
+
+  if (result.length !== 66) {
+    throw new Error("invalid web3 implicit bytes32");
+  }
+  return result;
+
 }
